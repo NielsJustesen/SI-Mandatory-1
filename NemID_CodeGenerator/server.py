@@ -3,7 +3,7 @@ import random
 import sqlite3
 app = Flask(__name__)
 
-@app.route('/nemid-auth')
+@app.route('/nemid-auth', methods = ['POST'])
 def generate():
   db = sqlite3.connect('../NemID_ESB/nem_id_database.sqlite')
   data = request.get_json()
@@ -15,7 +15,7 @@ def generate():
   db_cursor.execute(get_command)
   db_pass = db_cursor.fetchone()
   if db_pass[0] == password:
-    return random.randint(), 201
+    return random.randint(100000,999999), 201
   else:
-    return "no match", 403
+    return "Forbidden", 403
   

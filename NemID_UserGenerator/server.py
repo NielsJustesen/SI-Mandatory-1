@@ -2,7 +2,7 @@ from flask import Flask, request
 import random
 app = Flask(__name__)
 
-@app.route('/generate-nemID')
+@app.route('/generate-nemId', methods = ['POST'])
 def generate():
 	data = request.get_json()
 	last_four = data["cpr"][-4:]

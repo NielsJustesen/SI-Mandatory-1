@@ -1,7 +1,7 @@
 from flask import Flask, request
 app = Flask(__name__)
 
-@app.route('/generate-password-nemID')
+@app.route('/generate-password-nemID', methods = ['POST'])
 def generate():
 	data = request.get_json()
 	first_two = data["nemId"][:2]
