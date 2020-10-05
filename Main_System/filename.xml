@@ -1,1 +1,12 @@
-<Person><FirstName>Niels</FirstName><LastName>Justesen</LastName><CprNumber>050819973365</CprNumber><Email>mail@mail.dk</Email></Person>
+<person>
+  <FirstName>Ludvig</FirstName>
+  <LastName>Andersen</LastName>
+  <CprNumber>160219962382</CprNumber>
+  <Email>ludvig@ludvig.dk</Email>
+</person>
+<person>
+  <FirstName>Niels</FirstName>
+  <LastName>Justesen</LastName>
+  <CprNumber>111111117315</CprNumber>
+  <Email>niels@niels.dk</Email>
+</person>
