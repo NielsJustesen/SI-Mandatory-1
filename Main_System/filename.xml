@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <person>
   <FirstName>Ludvig</FirstName>
   <LastName>Andersen</LastName>
@@ -10,3 +11,5 @@
   <CprNumber>111111117315</CprNumber>
   <Email>niels@niels.dk</Email>
 </person>
+=======
+>>>>>>> f6fae582de7f8dcc2cb6eac100d244fe49c49adb
