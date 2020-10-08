@@ -50,7 +50,7 @@ for index, row in df.iterrows():
       "CPR": cpr,
       "NemID": nemID
     }
-    print(json.dumps(person_json))
+
     #Serialize the person_json object to a .msgpack file
     serialized_json = json.dumps(person_json)
     with open(cpr + ".msgpack", "wb") as data_file:
