@@ -13,9 +13,9 @@ for index, row in df.iterrows():
     lastName = row["LastName"]
     email = row["Email"]
     dateOfBirth = row["DateOfBirth"]
-    phone = row["Phone"]
-    address = row["Address"]
-    country = row["Country"]
+    # phone = row["Phone"]
+    # address = row["Address"]
+    # country = row["Country"]
     
     lastFour = random.randint(1000,9999)
     
