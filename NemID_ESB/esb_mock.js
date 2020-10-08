@@ -18,6 +18,7 @@ app.get('/test', (req, res) =>{
 
 
 app.post('/nemId', xmlparser({trim: false, explicitArray: false}), async(req, res, next) =>{
+    console.log(req.body)
     let cpr = req.body.person.cprnumber[0];
     let email = req.body.person.email[0];
     let nemId = '';
