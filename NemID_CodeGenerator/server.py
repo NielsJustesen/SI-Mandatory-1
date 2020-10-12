@@ -18,9 +18,14 @@ def generate():
   db_cursor = db.cursor()
   get_command = """SELECT Password FROM user WHERE NemID=""" + nemID
   db_cursor.execute(get_command)
+  
   db_pass = db_cursor.fetchone()
-  if db_pass[0] == password:
-    return random.randint(100000,999999), 201
+  
+  if db_pass:
+    if db_pass[0] == password:
+      return { "generatedCode":str(random.randint(100000,999999)) }, 201
+    else:
+      return {"status": "Forbidden"}, 403
   else:
-    return "Forbidden", 403
+    return {"status": "No user found"}, 404
   
