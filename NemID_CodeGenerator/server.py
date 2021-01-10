@@ -1,4 +1,5 @@
 from flask import Flask, request
+from datetime import datetime
 import random
 import sqlite3
 app = Flask(__name__)
@@ -16,14 +17,20 @@ def generate():
   nemID = data["nemId"]
 
   db_cursor = db.cursor()
-  get_command = """SELECT Password FROM user WHERE NemID=""" + nemID
+  get_command = """SELECT Password, Id FROM user WHERE NemID=""" + nemID
   db_cursor.execute(get_command)
   
   db_pass = db_cursor.fetchone()
   
   if db_pass:
     if db_pass[0] == password:
-      return { "generatedCode":str(random.randint(100000,999999)) }, 201
+      code = str(random.randint(100000,999999))
+      post_command = "INSERT INTO auth_log (UserID, Code, Timestamp) VALUES (?, ?, ?)"
+      print(post_command)
+      db_cursor.execute(post_command, (db_pass[1], code, datetime.now()))
+      db.commit()
+
+      return { "generatedCode": code}, 201  
     else:
       return {"status": "Forbidden"}, 403
   else:
